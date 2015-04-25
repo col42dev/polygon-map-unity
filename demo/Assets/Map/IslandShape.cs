@@ -56,7 +56,7 @@ namespace Assets.Map
                 var x = q.x + offset;
                 var y = q.y + offset;
                 var perlin = Mathf.PerlinNoise(x/10 , y/10);
-                var checkValue = (0.3 + 0.3 * q.magnitude * q.magnitude);
+                //var checkValue = (0.3 + 0.3 * q.magnitude * q.magnitude);
                 var result = perlin > .3;
                 return result;
             };

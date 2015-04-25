@@ -11,7 +11,7 @@ namespace Assets.Map
     {
         List<KeyValuePair<int, Corner>> _cornerMap = new List<KeyValuePair<int, Corner>>();
         Func<Vector2, bool> inside;
-        bool _needsMoreRandomness;
+        bool _needsMoreRandomness = false;
 
         public int Width { get; private set; }
         public int Height { get; private set; }

@@ -14,8 +14,9 @@ namespace Assets.Map
             _textureScale = textureScale;
         }
 
-        public void AttachTexture(GameObject plane, Map map)
+		public void AttachTexture(GameObject plane, Map map)
         {
+			//Debug.Log("AttachTexture");
 
             int _textureWidth = (int)Map.Width * _textureScale;
             int _textureHeight = (int)Map.Height * _textureScale;
@@ -32,8 +33,8 @@ namespace Assets.Map
             foreach (var c in map.Graph.centers)
                 texture.FillPolygon(c.corners.Select(p => new Vector2(p.point.x * _textureScale, p.point.y * _textureScale)).ToArray(), BiomeProperties.Colors[c.biome]);
 
-            foreach (var line in lines)
-                DrawLine(texture, line[0], line[1], line[2], line[3], Color.black);
+            //foreach (var line in lines)
+            //    DrawLine(texture, line[0], line[1], line[2], line[3], Color.black);
 
             foreach (var line in map.Graph.edges.Where(p => p.river > 0 && !p.d0.water && !p.d1.water))
                 DrawLine(texture, line.v0.point.x, line.v0.point.y, line.v1.point.x, line.v1.point.y, Color.blue);

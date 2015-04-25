@@ -8,7 +8,7 @@ using Assets.Map;
 public class Main : MonoBehaviour
 {
     Map _map;
-    const int _textureScale = 50;
+	const int _textureScale = 15; //0;
     GameObject _selector;
 
     void Update()

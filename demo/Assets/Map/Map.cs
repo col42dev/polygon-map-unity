@@ -43,6 +43,13 @@ namespace Assets.Map
         internal void Click(Vector2 point)
         {
             SelectedCenter = Graph.centers.FirstOrDefault(p => p.PointInside(point.x, point.y));
+
+
+			SelectedCenter.biome = Biome.Grassland;
+
+
+			const int _textureScale = 15;
+			new MapTexture(_textureScale).AttachTexture(GameObject.Find("Map"), this);
         }
     }
 }
